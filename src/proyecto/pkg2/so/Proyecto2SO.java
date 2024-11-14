@@ -15,6 +15,9 @@ public class Proyecto2SO {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Interfaz interfaz = new Interfaz();
+        interfaz.setLocationRelativeTo(null);
+        interfaz.show();
     }
     
 }

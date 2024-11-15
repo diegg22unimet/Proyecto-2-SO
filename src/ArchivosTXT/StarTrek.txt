@@ -1,0 +1,119 @@
+Name: Jean-Luc Picard
+HP: 90
+Strength: 85
+Agility: 80
+Ability: 88
+
+Name: Spock
+HP: 85
+Strength: 80
+Agility: 82
+Ability: 90
+
+Name: Kathryn Janeway
+HP: 88
+Strength: 82
+Agility: 85
+Ability: 87
+
+Name: James T. Kirk
+HP: 89
+Strength: 84
+Agility: 88
+Ability: 86
+
+Name: Data
+HP: 87
+Strength: 88
+Agility: 82
+Ability: 89
+
+Name: Seven of Nine
+HP: 86
+Strength: 85
+Agility: 90
+Ability: 88
+
+Name: Leonard McCoy
+HP: 85
+Strength: 80
+Agility: 83
+Ability: 85
+
+Name: Deanna Troi
+HP: 84
+Strength: 82
+Agility: 87
+Ability: 86
+
+Name: Worf
+HP: 88
+Strength: 87
+Agility: 82
+Ability: 90
+
+Name: Beverly Crusher
+HP: 86
+Strength: 84
+Agility: 88
+Ability: 86
+
+Name: Hikaru Sulu
+HP: 87
+Strength: 85
+Agility: 83
+Ability: 85
+
+Name: Guinan
+HP: 85
+Strength: 82
+Agility: 87
+Ability: 88
+
+Name: Montgomery Scott
+HP: 89
+Strength: 86
+Agility: 84
+Ability: 87
+
+Name: Pavel Chekov
+HP: 84
+Strength: 80
+Agility: 85
+Ability: 84
+
+Name: Nyota Uhura
+HP: 86
+Strength: 85
+Agility: 83
+Ability: 86
+
+Name: Q
+HP: 90
+Strength: 88
+Agility: 90
+Ability: 95
+
+Name: Geordi La Forge
+HP: 87
+Strength: 85
+Agility: 88
+Ability: 89
+
+Name: Tasha Yar
+HP: 85
+Strength: 82
+Agility: 87
+Ability: 86
+
+Name: Wesley Crusher
+HP: 82
+Strength: 80
+Agility: 84
+Ability: 83
+
+Name: Guinan
+HP: 85
+Strength: 82
+Agility: 87
+Ability: 88

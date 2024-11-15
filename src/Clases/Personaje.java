@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package proyecto.pkg2.so;
+package Clases;
 
 /**
  *
@@ -14,29 +14,24 @@ public class Personaje {
     int priority; 
     int counter; // contador para aumentar prioridad
     String name;
-    int atributasCalidad = 0; //contador de atributos de calidad
-    int ph, strength, agility; //atributos
-    int nAbilities; // se cuenta los elementos de la lista
-    String abilities; //nombre de las habilidades, se le pasa una lista con varios nombres
+    int atributosCalidad = 0;
+    int hp, strength, agility, ability; //atributos
     
-    public Personaje(int ID, String name, int ph, int stregth, int agility, String abilities){
+    public Personaje(int ID, String name, int ph, int stregth, int agility, int ability){
         this.ID = ID;
         this.name = name;
-        this.ph = ph;
-        this.strength = stregth;
+        this.hp = hp;
+        this.strength = strength;
         this.agility = agility;
-        this.abilities = abilities;
-        this.nAbilities = abilities.split(",").length; // de esta forma se cuentan los elementos de la lista 
+        this.ability = ability;
         counter = 0;
         getInitialPriority();
     }
     
-    //En esta funcion se le pasa el % de probabilidad y aleatoriamente se saca un numero 
-    //se verifica si el numero aleatorio esta dentro de la probabilidad asignada, de ser asi se considera un atributo de calidad
     public void checkQuality(int probability){
         int random = (int)(Math.random() * 100);
         if(random <= probability){
-            atributasCalidad++;
+            atributosCalidad++;
         }   
     }
     
@@ -52,7 +47,6 @@ public class Personaje {
         return false;
     }
     
-    
     //Basicamente se cuantan los atributos que pasaron la prueva de calidad y en base al nro se designa la prioridad
     public void getInitialPriority(){
         checkQuality(60); //Abilities
@@ -60,11 +54,29 @@ public class Personaje {
         checkQuality(50); // Strenght
         checkQuality(40); // Agility
         
-        switch(atributasCalidad){
+        switch(atributosCalidad){
             case 0, 1 -> priority = 3;
             case 2 -> priority = 2;
             case 3, 4 -> priority = 1;                     
         }
     }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    
 }
 

@@ -2,9 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package proyecto.pkg2.so;
+package Clases;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -14,11 +17,11 @@ import java.util.Scanner;
 public class Franquicia {
     String name;
     int winners;
-    Cola<Character> p1, p2, p3, reinforcement;
+    Cola<Personaje> p1, p2, p3, reinforcement;
     Cola<Personaje> characters;
-    Proyecto2GUI GUI;
+    Interfaz GUI;
     
-    public Franquicia(String name, Proyecto2GUI GUI){
+    public Franquicia(String name, Interfaz GUI){
         this.name = name;
         this.GUI = GUI;
         p1 = new Cola<>();
@@ -30,13 +33,13 @@ public class Franquicia {
     }
     
     public void loadCharacters(){
-        String filename = System.getProperty("user.dir") + "\\src\\" + name + "Characters.txt" ;
+        String filename = "src\\ArchivosTXT\\" + name + ".txt" ;
       
         try{
            File myObj = new File(filename);
            Scanner myReader = new Scanner(myObj);
            
-           for(int i=0; i < 30; i++){
+           for(int i=0; i < 19; i++){
                 String line = myReader.nextLine();
                 String nameC = line;
                 line = myReader.nextLine();
@@ -46,19 +49,19 @@ public class Franquicia {
                 line = myReader.nextLine();
                 int agility = Integer. parseInt(line.split(": ")[1]);
                 line = myReader.nextLine();
-                String abilities = line.split(": ")[1];
+                int ability = Integer. parseInt(line.split(": ")[1]);
                 line = myReader.nextLine();
-                Personaje newCharacter = new Personaje(GUI.getID(), nameC, hp, strength, agility, abilities);
+                Personaje newPersonaje = new Personaje(GUI.getID(), nameC, hp, strength, agility, ability);
                 
                 if(i < 10){
-                    switch(newCharacter.atributasCalidad){
-                        case 0, 1 -> p3.InsertInFinal(newCharacter);
-                        case 2 -> p2.InsertInFinal(newCharacter);
-                        case 3, 4 -> p1.InsertInFinal(newCharacter);                     
+                    switch(newPersonaje.atributosCalidad){
+                        case 0, 1 -> p3.InsertInFinal(newPersonaje);
+                        case 2 -> p2.InsertInFinal(newPersonaje);
+                        case 3, 4 -> p1.InsertInFinal(newPersonaje);                     
                     }
                 
                 }  else{
-                    characters.InsertInFinal(newCharacter);
+                    characters.InsertInFinal(newPersonaje);
                 }
            }
         } catch (FileNotFoundException e) {
@@ -67,11 +70,11 @@ public class Franquicia {
         }
     }
     
-    public void addToP1(Character fighter){
+    public void addToP1(Personaje fighter){
         p1.InsertInFinal(fighter);
     }
     
-    public void addToReinforcement(Character fighter){
+    public void addToReinforcement(Personaje fighter){
         reinforcement.InsertInFinal(fighter);
     }
     
@@ -80,7 +83,7 @@ public class Franquicia {
             Node<Personaje> node = characters.getFirst();
             Personaje c = node.getElement();
             characters.remove();
-            switch(c.atributasCalidad){
+            switch(c.atributosCalidad){
                 case 0, 1 -> p3.InsertInFinal(c);
                 case 2 -> p2.InsertInFinal(c);
                 case 3, 4 -> p1.InsertInFinal(c);                     
@@ -90,7 +93,7 @@ public class Franquicia {
     
     public void checkReinforcement(){
         if(!reinforcement.isEmpty()){
-            Character c = reinforcement.dispatch();
+            Personaje c = reinforcement.dispatch();
             int random = (int)(Math.random() * 100);
             if(random <= 40){
                 p1.InsertInFinal(c);
@@ -151,4 +154,53 @@ public class Franquicia {
             node = node.getNext();
         }
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getWinners() {
+        return winners;
+    }
+
+    public void setWinners(int winners) {
+        this.winners = winners;
+    }
+
+    public Cola<Personaje> getP1() {
+        return p1;
+    }
+
+    public void setP1(Cola<Personaje> p1) {
+        this.p1 = p1;
+    }
+
+    public Cola<Personaje> getP2() {
+        return p2;
+    }
+
+    public void setP2(Cola<Personaje> p2) {
+        this.p2 = p2;
+    }
+
+    public Cola<Personaje> getP3() {
+        return p3;
+    }
+
+    public void setP3(Cola<Personaje> p3) {
+        this.p3 = p3;
+    }
+
+    public Cola<Personaje> getReinforcement() {
+        return reinforcement;
+    }
+
+    public void setReinforcement(Cola<Personaje> reinforcement) {
+        this.reinforcement = reinforcement;
+    }
+    
 }

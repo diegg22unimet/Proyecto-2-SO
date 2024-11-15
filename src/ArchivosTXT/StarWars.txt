@@ -1,0 +1,119 @@
+Name: Luke Skywalker
+HP: 90
+Strength: 85
+Agility: 80
+Ability: 88
+
+Name: Leia Organa
+HP: 85
+Strength: 80
+Agility: 82
+Ability: 90
+
+Name: Darth Vader
+HP: 95
+Strength: 90
+Agility: 75
+Ability: 92
+
+Name: Han Solo
+HP: 88
+Strength: 82
+Agility: 85
+Ability: 87
+
+Name: Yoda
+HP: 92
+Strength: 88
+Agility: 95
+Ability: 94
+
+Name: Obi-Wan Kenobi
+HP: 87
+Strength: 83
+Agility: 80
+Ability: 89
+
+Name: Padmé Amidala
+HP: 84
+Strength: 78
+Agility: 83
+Ability: 85
+
+Name: Anakin Skywalker
+HP: 89
+Strength: 87
+Agility: 82
+Ability: 90
+
+Name: Rey
+HP: 86
+Strength: 84
+Agility: 88
+Ability: 86
+
+Name: Chewbacca
+HP: 93
+Strength: 92
+Agility: 78
+Ability: 85
+
+Name: Mace Windu
+HP: 91
+Strength: 89
+Agility: 84
+Ability: 91
+
+Name: Ahsoka Tano
+HP: 85
+Strength: 82
+Agility: 87
+Ability: 88
+
+Name: Qui-Gon Jinn
+HP: 88
+Strength: 85
+Agility: 82
+Ability: 86
+
+Name: Lando Calrissian
+HP: 83
+Strength: 80
+Agility: 85
+Ability: 84
+
+Name: Boba Fett
+HP: 86
+Strength: 90
+Agility: 84
+Ability: 87
+
+Name: Finn
+HP: 84
+Strength: 82
+Agility: 85
+Ability: 83
+
+Name: General Grievous
+HP: 92
+Strength: 95
+Agility: 80
+Ability: 89
+
+Name: Count Dooku
+HP: 87
+Strength: 88
+Agility: 83
+Ability: 90
+
+Name: Jango Fett
+HP: 85
+Strength: 87
+Agility: 82
+Ability: 88
+
+Name: Captain Phasma
+HP: 84
+Strength: 85
+Agility: 80
+Ability: 86

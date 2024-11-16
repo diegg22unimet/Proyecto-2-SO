@@ -182,14 +182,14 @@ public class Interfaz extends javax.swing.JFrame {
         matchResult.setText("" + result);
     }
 
-    void updateS1Winners(String winner) {
-//        String before = s1Winners.getText();
-//        s1Winners.setText(before + winner + "\n");
+    void actualizarListaWinners_SW(String winner) {
+        String before = totalWinners_SW.getText();
+        winnerList_SW.setText(before + winner + "\n");
     }
 
-    void updateS2Winners(String winner) {
-//        String before = s2Winners.getText();
-//        s2Winners.setText(before + winner + "\n");
+    void actualizarListaWinners_ST(String winner) {
+        String before = winnerList_ST.getText();
+        winnerList_ST.setText(before + winner + "\n");
     }
 
     /**
@@ -201,6 +201,13 @@ public class Interfaz extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        winnersList = new javax.swing.JDialog();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        winnerList_SW = new javax.swing.JTextArea();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        winnerList_ST = new javax.swing.JTextArea();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         mainWindow = new javax.swing.JPanel();
         panelStarWars = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -246,6 +253,48 @@ public class Interfaz extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         characterStarTrek = new javax.swing.JTextArea();
         matchResult = new javax.swing.JLabel();
+        showWinners = new javax.swing.JButton();
+
+        winnerList_SW.setColumns(20);
+        winnerList_SW.setRows(5);
+        jScrollPane3.setViewportView(winnerList_SW);
+
+        winnerList_ST.setColumns(20);
+        winnerList_ST.setRows(5);
+        jScrollPane4.setViewportView(winnerList_ST);
+
+        jLabel1.setText("Ganadores de Star Trek");
+
+        jLabel2.setText("Ganadores de Star Wars");
+
+        javax.swing.GroupLayout winnersListLayout = new javax.swing.GroupLayout(winnersList.getContentPane());
+        winnersList.getContentPane().setLayout(winnersListLayout);
+        winnersListLayout.setHorizontalGroup(
+            winnersListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, winnersListLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addGroup(winnersListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                .addGroup(winnersListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(39, 39, 39))
+        );
+        winnersListLayout.setVerticalGroup(
+            winnersListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(winnersListLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(winnersListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(winnersListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(45, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -458,6 +507,8 @@ public class Interfaz extends javax.swing.JFrame {
 
         logoStarTrek.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/StarTrek.png"))); // NOI18N
 
+        startButton.setBackground(new java.awt.Color(255, 255, 255));
+        startButton.setForeground(new java.awt.Color(255, 255, 255));
         startButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/BotonPlay.png"))); // NOI18N
         startButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -495,6 +546,15 @@ public class Interfaz extends javax.swing.JFrame {
         matchResult.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         matchResult.setText("...");
 
+        showWinners.setBackground(new java.awt.Color(255, 255, 255));
+        showWinners.setForeground(new java.awt.Color(0, 0, 0));
+        showWinners.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/BotonTrophy.png"))); // NOI18N
+        showWinners.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showWinnersActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout mainWindowLayout = new javax.swing.GroupLayout(mainWindow);
         mainWindow.setLayout(mainWindowLayout);
         mainWindowLayout.setHorizontalGroup(
@@ -522,18 +582,23 @@ public class Interfaz extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainWindowLayout.createSequentialGroup()
                 .addGap(141, 141, 141)
                 .addComponent(logoStarWars)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(startButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
                 .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainWindowLayout.createSequentialGroup()
-                        .addComponent(decreaseSpeed)
+                    .addGroup(mainWindowLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainWindowLayout.createSequentialGroup()
+                                .addComponent(decreaseSpeed)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(speedSimulation, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(speedLabel, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(speedSimulation, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(speedLabel, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(increaseSpeed)
-                .addGap(76, 76, 76)
+                        .addComponent(increaseSpeed))
+                    .addGroup(mainWindowLayout.createSequentialGroup()
+                        .addGap(182, 182, 182)
+                        .addComponent(startButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                        .addComponent(showWinners, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(104, 104, 104)
                 .addComponent(logoStarTrek)
                 .addGap(91, 91, 91))
         );
@@ -547,17 +612,18 @@ public class Interfaz extends javax.swing.JFrame {
                             .addComponent(logoStarTrek)
                             .addComponent(logoStarWars)))
                     .addGroup(mainWindowLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGap(33, 33, 33)
+                        .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(startButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(mainWindowLayout.createSequentialGroup()
-                                .addComponent(speedLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(speedSimulation)
-                                    .addComponent(increaseSpeed)
-                                    .addComponent(decreaseSpeed))))))
-                .addGap(41, 41, 41)
+                            .addComponent(showWinners, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(20, 20, 20)
+                        .addComponent(speedLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(speedSimulation)
+                            .addComponent(increaseSpeed)
+                            .addComponent(decreaseSpeed))))
+                .addGap(35, 35, 35)
                 .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(panelStarWars, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(panelStarTrek, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -611,6 +677,12 @@ public class Interfaz extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_decreaseSpeedActionPerformed
 
+    private void showWinnersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showWinnersActionPerformed
+        // TODO add your handling code here:
+        winnersList.pack();
+        winnersList.setVisible(true);
+    }//GEN-LAST:event_showWinnersActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -659,10 +731,12 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JTextArea characterStarWars;
     private javax.swing.JButton decreaseSpeed;
     private javax.swing.JButton increaseSpeed;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -679,6 +753,8 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JScrollPane jScrollPane16;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JLabel logoStarTrek;
     private javax.swing.JLabel logoStarWars;
@@ -687,10 +763,14 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel matchStatus;
     private javax.swing.JPanel panelStarTrek;
     private javax.swing.JPanel panelStarWars;
+    private javax.swing.JButton showWinners;
     private javax.swing.JLabel speedLabel;
     private javax.swing.JLabel speedSimulation;
     private javax.swing.JButton startButton;
     private javax.swing.JLabel totalWinners_ST;
     private javax.swing.JLabel totalWinners_SW;
+    private javax.swing.JTextArea winnerList_ST;
+    private javax.swing.JTextArea winnerList_SW;
+    private javax.swing.JDialog winnersList;
     // End of variables declaration//GEN-END:variables
 }

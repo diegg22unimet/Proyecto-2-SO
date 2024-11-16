@@ -48,11 +48,11 @@ public class IA extends Thread{
                 if(atacante.name.equals(f1.name)){
                     arena.franquicia1.winners++;
                     arena.GUI.actualizarGanadores_SW(); 
-                    arena.GUI.updateS1Winners(f1.name + " (ID: " + f1.ID + ")");
+                    arena.GUI.actualizarListaWinners_SW(f1.name + " (ID: " + f1.ID + ")");
                 } else {
                     arena.franquicia2.winners++;
                     arena.GUI.actualizarGanadores_ST();
-                    arena.GUI.updateS2Winners(f2.name + " (ID: " + f2.ID + ")");
+                    arena.GUI.actualizarListaWinners_ST(f2.name + " (ID: " + f2.ID + ")");
                 }
                 arena.GUI.mostrarResultado("Ganó " + atacante.name);
                 break; // Sale del bucle si hay un ganador

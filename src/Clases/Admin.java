@@ -43,8 +43,8 @@ public class Admin extends Thread{
             arena.GUI.actualizarArena_ST();
             
             // Update queues
-            arena.franquicia1.updateCounter();
-            arena.franquicia2.updateCounter();
+            arena.franquicia1.actualizarContador();
+            arena.franquicia2.actualizarContador();
             arena.franquicia1.checkReinforcement();
             arena.franquicia2.checkReinforcement();
             

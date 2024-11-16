@@ -131,11 +131,11 @@ public class Franquicia {
         }
     }
     
-    public void updateCounter(){
+    public void actualizarContador(){
         Node<Personaje> node = p2.getFirst();
         while(node != null){
             Personaje c = node.getElement();
-            boolean movePriority = c.updateCounter();
+            boolean movePriority = c.actualizarContador();
             if(movePriority){
                 p2.remove();
                 p1.InsertInFinal(c);
@@ -154,7 +154,7 @@ public class Franquicia {
         node = p3.getFirst();
         while(node != null){
             Personaje c = node.getElement();
-            boolean movePriority = c.updateCounter();
+            boolean movePriority = c.actualizarContador();
             if(movePriority){
                 p3.remove();
                 p2.InsertInFinal(c);

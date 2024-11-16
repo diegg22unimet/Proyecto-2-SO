@@ -4,38 +4,74 @@
  */
 package Clases;
 
+import java.util.Random;
+
 /**
  *
  * @author User
  */
 public class Personaje {
     
-    int ID; //id del personaje
+    int ID;
     int priority; 
-    int counter; // contador para aumentar prioridad
+    int counter; //Contador para aumentar prioridad
     String name;
     int atributosCalidad = 0;
-    int hp, strength, agility, ability; //atributos
+    int hp, strength, agility, ability, hp_max; //Atributos de combate
     
-    public Personaje(int ID, String name, int ph, int stregth, int agility, int ability){
+    public Personaje(int ID, String name, int hp, int strength, int agility, int ability){
         this.ID = ID;
         this.name = name;
         this.hp = hp;
         this.strength = strength;
         this.agility = agility;
         this.ability = ability;
+        this.hp_max = hp;
         counter = 0;
         getInitialPriority();
     }
     
-    public void checkQuality(int probability){
+    public int atacar(boolean usarHabilidadEspecial) {
+        Random rand = new Random();
+        double multiplicadorCritico = (rand.nextInt(100) < ability * 10) ? 1.5 : 1.0;
+        int danio = (int) (strength * multiplicadorCritico);
+
+        // Usar habilidad especial si se activa
+        if (usarHabilidadEspecial) {
+            danio *= 2; // Doble daño
+            System.out.println(name + " usa su habilidad especial!");
+        }
+        return danio;
+    }
+    
+    public boolean evadir(int ataqueAgilidad) {
+        Random rand = new Random();
+        double probabilidadEvasion = (double) agility / (agility + ataqueAgilidad);
+        return rand.nextDouble() < probabilidadEvasion;
+    }
+    
+    public void recibirDanio(int danio) {
+        hp -= danio;
+        if (hp < 0) hp = 0;
+    }
+    
+    public void curarse(int cantidad) {
+        hp += cantidad;
+        if (hp > hp_max) hp = hp_max; // No superar la vida máxima
+    }
+    
+    public boolean tieneVidaBaja() {
+        return hp < hp_max * 0.3; // Habilidad especial activa si la vida está por debajo del 30%
+    }
+    
+    public void comprobarCalidad(int probability){
         int random = (int)(Math.random() * 100);
         if(random <= probability){
             atributosCalidad++;
         }   
     }
     
-    public boolean updateCounter(){
+    public boolean actualizarContador(){
         counter++;
         if(counter == 8){
             if(priority != 1){
@@ -47,12 +83,12 @@ public class Personaje {
         return false;
     }
     
-    //Basicamente se cuantan los atributos que pasaron la prueva de calidad y en base al nro se designa la prioridad
+    //Basicamente se cuentan los atributos que pasaron la prueva de calidad y en base al nro se designa la prioridad
     public void getInitialPriority(){
-        checkQuality(60); //Abilities
-        checkQuality(70); // ph
-        checkQuality(50); // Strenght
-        checkQuality(40); // Agility
+        comprobarCalidad(60); //Ability
+        comprobarCalidad(70); //HP
+        comprobarCalidad(50); //Strenght
+        comprobarCalidad(40); //Agility
         
         switch(atributosCalidad){
             case 0, 1 -> priority = 3;
@@ -76,7 +112,14 @@ public class Personaje {
     public void setName(String name) {
         this.name = name;
     }
-    
+
+    public int getHp() {
+        return hp;
+    }
+
+    public int getAgility() {
+        return agility;
+    }
     
 }
 

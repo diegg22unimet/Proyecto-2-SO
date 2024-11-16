@@ -18,35 +18,51 @@ public class IA extends Thread{
     }
     
     public void processWinner(Personaje f1, Personaje f2){
-        // Choose who hits first (if they tie, the street fighters characters go first)
-        Personaje fighting, getHit, aux;
-        if(f1.agility > f2.agility){
-            fighting = f1;
-            getHit = f2;
-        }else{
-            fighting = f2;
-            getHit = f1;
+        while (f1.getHp()> 0 && f2.getHp()> 0) {
+            Personaje atacante, defensor;
+
+            //Se determina quién ataca primero según la agilidad
+            if (f1.getAgility()>= f2.getAgility()) {
+                atacante = f1;
+                defensor = f2;
+            } else {
+                atacante = f2;
+                defensor = f1;
+            }
+
+            //Turno del atacante
+            System.out.println(atacante.getName()+ " ataca.");
+            boolean usarHabilidadEspecial = atacante.tieneVidaBaja();
+            int danio = atacante.atacar(usarHabilidadEspecial);
+            if (!defensor.evadir(atacante.getAgility())) {
+                defensor.recibirDanio(danio);
+                System.out.println(defensor.getName()+ " recibe " + danio + " de daño. Vida restante: " + defensor.getHp());
+            } else {
+                System.out.println(defensor.getName()+ " evade el ataque.");
+            }
+            
+            //Verificar si el defensor ha sido derrotado
+            if (defensor.getHp()<= 0) {
+                System.out.println(defensor.getName()+ " ha sido derrotado.");
+                arena.winners.InsertInFinal(atacante);
+                if(atacante.name.equals(f1.name)){
+                    arena.franquicia1.winners++;
+                    arena.GUI.actualizarGanadores_SW(); 
+                    arena.GUI.updateS1Winners(f1.name + " (ID: " + f1.ID + ")");
+                } else {
+                    arena.franquicia2.winners++;
+                    arena.GUI.actualizarGanadores_ST();
+                    arena.GUI.updateS2Winners(f2.name + " (ID: " + f2.ID + ")");
+                }
+                arena.GUI.mostrarResultado("Ganó " + atacante.name);
+                break; // Sale del bucle si hay un ganador
+            }
+
+            //Se intercambian los roles para el siguiente turno
+            Personaje temp = atacante;
+            atacante = defensor;
+            defensor = temp;
         }
-        while(f1.hp > 0 && f2.hp > 0){
-//            getHit.hp -= fighting.strength + (fighting.nAbilities * 5); ARREGLAR
-            // Swap fighters positions
-            aux = fighting;
-            fighting = getHit;
-            getHit = aux;
-        } 
-        
-        arena.winners.InsertInFinal(getHit);
-        if(getHit.name.equals(f1.name)){
-            arena.franquicia1.winners++;
-            arena.GUI.actualizarGanadores_SW(); 
-            arena.GUI.updateS1Winners(f1.name + " (ID: " + f1.ID + ")");
-        }else{
-            arena.franquicia2.winners++;
-            arena.GUI.actualizarGanadores_ST();
-            arena.GUI.updateS2Winners(f2.name + " (ID: " + f2.ID + ")");
-        }
-        
-        arena.GUI.mostrarResultado("Ganó " + getHit.name);
     }
     
     public void processTie(Personaje fighter1, Personaje fighter2){

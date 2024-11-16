@@ -26,23 +26,23 @@ public class Arena {
         if(!fran.p1.isEmpty()){
             c = fran.p1.dispatch();
             if(fran.name.equals("StarWars"))
-                GUI.updateP1QueueS1();
+                GUI.actualizarP1_SW();
             else
-                GUI.updateP1QueueS2();
+                GUI.actualizarP1_ST();
         }
         else if(!fran.p2.isEmpty()){
             c = fran.p2.dispatch();
             if(fran.name.equals("StarWars"))
-                GUI.updateP2QueueS1();
+                GUI.actualizarP2_SW();
             else
-                GUI.updateP2QueueS2();
+                GUI.actualizarP2_ST();
         }
         else if(!fran.p3.isEmpty()){
             c = fran.p3.dispatch();
             if(fran.name.equals("StarWars"))
-                GUI.updateP3QueueS1();
+                GUI.actualizarP3_SW();
             else
-                GUI.updateP3QueueS2();
+                GUI.actualizarP3_ST();
         }
         return c;
     }

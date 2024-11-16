@@ -27,12 +27,12 @@ public class Interfaz extends javax.swing.JFrame {
         arena = new Arena(this);
         cpu = new IA(arena, 1);
         admin = new Admin(arena, cpu);
-        updateP1QueueS1();
-        updateP2QueueS1();
-        updateP3QueueS1();
-        updateP1QueueS2();
-        updateP2QueueS2();
-        updateP3QueueS2();
+        actualizarP1_SW();
+        actualizarP2_SW();
+        actualizarP3_SW();
+        actualizarP1_ST();
+        actualizarP2_ST();
+        actualizarP3_ST();
     }
     
     int getID() {
@@ -41,144 +41,144 @@ public class Interfaz extends javax.swing.JFrame {
         return ID;
     }
     
-    void updateP1QueueS1() {
+    void actualizarP1_SW() {
         Franquicia studio1 = arena.franquicia1;
         Cola<Personaje> p1 = studio1.p1;
         String text = "";
 
         Node<Personaje> node = p1.getFirst();
         while (node != null) {
-            text += node.getElement().name + " (ID: " + node.getElement().ID + ")" + ", ";
+            text += node.getElement().name + " (ID: " + node.getElement().ID + ")\n";
             node = node.getNext();
         }
 
         P1Area_SW.setText(text);
     }
     
-    void updateP2QueueS1() {
+    void actualizarP2_SW() {
         Franquicia studio1 = arena.franquicia1;
         Cola<Personaje> p2 = studio1.p2;
         String text = "";
 
         Node<Personaje> node = p2.getFirst();
         while (node != null) {
-            text += node.getElement().name + " (ID: " + node.getElement().ID + ")" + ", ";
+            text += node.getElement().name + " (ID: " + node.getElement().ID + ")\n";
             node = node.getNext();
         }
 
         P2Area_SW.setText(text);
     }
 
-    void updateP3QueueS1() {
+    void actualizarP3_SW() {
         Franquicia studio1 = arena.franquicia1;
         Cola<Personaje> p3 = studio1.p3;
         String text = "";
 
         Node<Personaje> node = p3.getFirst();
         while (node != null) {
-            text += node.getElement().name + " (ID: " + node.getElement().ID + ")" + ", ";
+            text += node.getElement().name + " (ID: " + node.getElement().ID + ")\n";
             node = node.getNext();
         }
 
         P3Area_SW.setText(text);
     }
 
-    void updateP1QueueS2() {
+    void actualizarP1_ST() {
         Franquicia studio2 = arena.franquicia2;
         Cola<Personaje> p1 = studio2.p1;
         String text = "";
 
         Node<Personaje> node = p1.getFirst();
         while (node != null) {
-            text += node.getElement().name + " (ID: " + node.getElement().ID + ")" + ", ";
+            text += node.getElement().name + " (ID: " + node.getElement().ID + ")\n";
             node = node.getNext();
         }
 
         P1Area_ST.setText(text);
     }
 
-    void updateP2QueueS2() {
+    void actualizarP2_ST() {
         Franquicia studio2 = arena.franquicia2;
         Cola<Personaje> p2 = studio2.p2;
         String text = "";
 
         Node<Personaje> node = p2.getFirst();
         while (node != null) {
-            text += node.getElement().name + " (ID: " + node.getElement().ID + ")" + ", ";
+            text += node.getElement().name + " (ID: " + node.getElement().ID + ")\n";
             node = node.getNext();
         }
 
         P3Area_ST.setText(text);
     }
 
-    void updateP3QueueS2() {
+    void actualizarP3_ST() {
         Franquicia studio2 = arena.franquicia2;
         Cola<Personaje> p3 = studio2.p3;
         String text = "";
 
         Node<Personaje> node = p3.getFirst();
         while (node != null) {
-            text += node.getElement().name + " (ID: " + node.getElement().ID + ")" + ", ";
+            text += node.getElement().name + " (ID: " + node.getElement().ID + ")\n";
             node = node.getNext();
         }
 
         P3Area_ST.setText(text);
     }
 
-    void updateRefQueueS1() {
+    void actualizarRef_SW() {
         Franquicia studio1 = arena.franquicia1;
         Cola<Personaje> ref = studio1.reinforcement;
         String text = "";
 
         Node<Personaje> node = ref.getFirst();
         while (node != null) {
-            text += node.getElement().name + " (ID: " + node.getElement().ID + ")" + ", ";
+            text += node.getElement().name + " (ID: " + node.getElement().ID + ")\n";
             node = node.getNext();
         }
 
         P4Area_SW.setText(text);
     }
 
-    void updateRefQueueS2() {
+    void actualizarRef_ST() {
         Franquicia studio2 = arena.franquicia2;
         Cola<Personaje> ref = studio2.reinforcement;
         String text = "";
 
         Node<Personaje> node = ref.getFirst();
         while (node != null) {
-            text += node.getElement().name + " (ID: " + node.getElement().ID + ")" + ", ";
+            text += node.getElement().name + " (ID: " + node.getElement().ID + ")\n";
             node = node.getNext();
         }
 
         P4Area_ST.setText(text);
     }
     
-    void updateArenaS1() {
-//        Character c = arena.fighter1;
-//        nintendoArena.setText(c.name + ":\n  --HP: " + c.hitPoints + "\n  --Strength: " + c.strength + "\n  --Agiity: "
-//                + c.agility + "\n  --Abilities: " + c.abilities);
+    void actualizarArena_SW() {
+        Personaje c = arena.fighter1;
+        characterStarWars.setText(c.name + ":\n  --HP: " + c.hp + "\n  --Strength: " + c.strength + "\n  --Agiity: "
+                + c.agility + "\n  --Abilities: " + c.ability);
     }
 
-    void updateArenaS2() {
-//        Character c = arena.fighter2;
-//        capcomArena.setText(c.name + ":\n  --HP: " + c.hitPoints + "\n  --Strength: " + c.strength + "\n  --Agiity: "
-//                + c.agility + "\n  --Abilities: " + c.abilities);
+    void actualizarArena_ST() {
+        Personaje c = arena.fighter2;
+        characterStarTrek.setText(c.name + ":\n  --HP: " + c.hp + "\n  --Strength: " + c.strength + "\n  --Agiity: "
+                + c.agility + "\n  --Abilities: " + c.ability);
+    }
+
+    void actualizarGanadores_SW() {
+        totalWinners_SW.setText("" + arena.franquicia1.winners);
+    }
+
+    void actualizarGanadores_ST() {
+        totalWinners_ST.setText("" + arena.franquicia2.winners);
     }
     
-    void updateIAStatus(String status) {
-//        statusText.setText("Estado Actual: " + status);
+    void actualizarEstadoIA(String status) {
+        matchStatus.setText("" + status);
     }
 
-    void updateGamesWonS1() {
-//        nintendoGamesWon.setText("Juegos Ganados por Avatar: " + arena.studio1.winners);
-    }
-
-    void updateGamesWonS2() {
-//        capcomGamesWon.setText("Juegos Ganados por Un Show Más: " + arena.studio2.winners);
-    }
-
-    void updateResult(String result) {
-//        resultText.setText("Resultado: \n" + result);
+    void mostrarResultado(String result) {
+        matchResult.setText("" + result);
     }
 
     void updateS1Winners(String winner) {
@@ -216,8 +216,6 @@ public class Interfaz extends javax.swing.JFrame {
         jScrollPane12 = new javax.swing.JScrollPane();
         P3Area_SW = new javax.swing.JTextArea();
         jLabel6 = new javax.swing.JLabel();
-        characterStarTrek = new javax.swing.JLabel();
-        characterStarWars = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         matchStatus = new javax.swing.JLabel();
         panelStarTrek = new javax.swing.JPanel();
@@ -242,6 +240,11 @@ public class Interfaz extends javax.swing.JFrame {
         speedSimulation = new javax.swing.JLabel();
         decreaseSpeed = new javax.swing.JButton();
         increaseSpeed = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        characterStarWars = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        characterStarTrek = new javax.swing.JTextArea();
+        matchResult = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -343,17 +346,14 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGap(42, 42, 42))
         );
 
-        characterStarTrek.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        characterStarWars.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
         jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel17.setText("VS");
         jLabel17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         matchStatus.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        matchStatus.setText("ESTATUS JUEGO");
+        matchStatus.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        matchStatus.setText("...");
 
         panelStarTrek.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -457,7 +457,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         logoStarTrek.setText("LOGO STAR TREK");
 
-        startButton.setText("INICIAR");
+        startButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/BotonPlay.png"))); // NOI18N
         startButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 startButtonActionPerformed(evt);
@@ -470,6 +470,11 @@ public class Interfaz extends javax.swing.JFrame {
         speedSimulation.setText("1");
 
         decreaseSpeed.setText("-");
+        decreaseSpeed.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                decreaseSpeedActionPerformed(evt);
+            }
+        });
 
         increaseSpeed.setText("+");
         increaseSpeed.addActionListener(new java.awt.event.ActionListener() {
@@ -477,6 +482,17 @@ public class Interfaz extends javax.swing.JFrame {
                 increaseSpeedActionPerformed(evt);
             }
         });
+
+        characterStarWars.setColumns(20);
+        characterStarWars.setRows(5);
+        jScrollPane1.setViewportView(characterStarWars);
+
+        characterStarTrek.setColumns(20);
+        characterStarTrek.setRows(5);
+        jScrollPane2.setViewportView(characterStarTrek);
+
+        matchResult.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        matchResult.setText("...");
 
         javax.swing.GroupLayout mainWindowLayout = new javax.swing.GroupLayout(mainWindow);
         mainWindow.setLayout(mainWindowLayout);
@@ -487,25 +503,27 @@ public class Interfaz extends javax.swing.JFrame {
                 .addComponent(panelStarWars, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mainWindowLayout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(matchStatus))
-                    .addGroup(mainWindowLayout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(characterStarTrek, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(characterStarWars, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(mainWindowLayout.createSequentialGroup()
                         .addGap(128, 128, 128)
-                        .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                        .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(mainWindowLayout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                    .addGroup(mainWindowLayout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(matchStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+                            .addComponent(matchResult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(18, 35, Short.MAX_VALUE)
                 .addComponent(panelStarTrek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(55, 55, 55))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainWindowLayout.createSequentialGroup()
                 .addGap(180, 180, 180)
                 .addComponent(logoStarWars)
-                .addGap(170, 170, 170)
-                .addComponent(startButton, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(startButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
                 .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainWindowLayout.createSequentialGroup()
                         .addComponent(decreaseSpeed)
@@ -522,9 +540,6 @@ public class Interfaz extends javax.swing.JFrame {
             mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainWindowLayout.createSequentialGroup()
                 .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainWindowLayout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(startButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(mainWindowLayout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -537,20 +552,25 @@ public class Interfaz extends javax.swing.JFrame {
                         .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(speedSimulation)
                             .addComponent(increaseSpeed)
-                            .addComponent(decreaseSpeed))))
+                            .addComponent(decreaseSpeed)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainWindowLayout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(startButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(56, 56, 56)
                 .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(panelStarWars, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(panelStarTrek, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(mainWindowLayout.createSequentialGroup()
-                        .addGap(48, 48, 48)
+                        .addGap(39, 39, 39)
                         .addComponent(matchStatus)
-                        .addGap(68, 68, 68)
-                        .addComponent(characterStarWars, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(45, 45, 45)
+                        .addGap(18, 18, 18)
+                        .addComponent(matchResult)
+                        .addGap(37, 37, 37)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(52, 52, 52)
                         .addComponent(jLabel17)
-                        .addGap(33, 33, 33)
-                        .addComponent(characterStarTrek, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(53, 53, 53)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
@@ -576,7 +596,19 @@ public class Interfaz extends javax.swing.JFrame {
 
     private void increaseSpeedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseSpeedActionPerformed
         // TODO add your handling code here:
+        int newVelocity = cpu.velocity + 1;
+        cpu.setVelocity(newVelocity);
+        speedSimulation.setText("" + newVelocity);
     }//GEN-LAST:event_increaseSpeedActionPerformed
+
+    private void decreaseSpeedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaseSpeedActionPerformed
+        // TODO add your handling code here:
+        if (cpu.velocity > 1) {
+            int newVelocity = cpu.velocity - 1;
+            cpu.setVelocity(newVelocity);
+            speedSimulation.setText("" + newVelocity);
+        }
+    }//GEN-LAST:event_decreaseSpeedActionPerformed
 
     /**
      * @param args the command line arguments
@@ -622,8 +654,8 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JTextArea P3Area_SW;
     private javax.swing.JTextArea P4Area_ST;
     private javax.swing.JTextArea P4Area_SW;
-    private javax.swing.JLabel characterStarTrek;
-    private javax.swing.JLabel characterStarWars;
+    private javax.swing.JTextArea characterStarTrek;
+    private javax.swing.JTextArea characterStarWars;
     private javax.swing.JButton decreaseSpeed;
     private javax.swing.JButton increaseSpeed;
     private javax.swing.JLabel jLabel10;
@@ -637,6 +669,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
@@ -644,10 +677,12 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JScrollPane jScrollPane16;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JLabel logoStarTrek;
     private javax.swing.JLabel logoStarWars;
     private javax.swing.JPanel mainWindow;
+    private javax.swing.JLabel matchResult;
     private javax.swing.JLabel matchStatus;
     private javax.swing.JPanel panelStarTrek;
     private javax.swing.JPanel panelStarWars;

@@ -34,13 +34,13 @@ public class Admin extends Thread{
             if(arena.fighter1 == null || arena.fighter2 == null){
                 Thread.currentThread().interrupt();
                 cpu.interrupt();
-                arena.GUI.updateIAStatus("Fin de Simulación");
-                arena.GUI.updateResult("Fin de Simulación");
+                arena.GUI.actualizarEstadoIA("Fin de Simulación");
+                arena.GUI.mostrarResultado("Fin de Simulación");
                 break;
             }
             
-            arena.GUI.updateArenaS1();
-            arena.GUI.updateArenaS2();
+            arena.GUI.actualizarArena_SW();
+            arena.GUI.actualizarArena_ST();
             
             // Update queues
             arena.franquicia1.updateCounter();

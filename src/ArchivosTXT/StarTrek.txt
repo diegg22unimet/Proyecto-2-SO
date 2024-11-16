@@ -1,119 +1,185 @@
-Name: Jean-Luc Picard
-HP: 90
-Strength: 85
-Agility: 80
-Ability: 88
+James T. Kirk
+HP: 93
+Strength: 81
+Agility: 77
+Ability: 92
 
-Name: Spock
-HP: 85
-Strength: 80
-Agility: 82
-Ability: 90
-
-Name: Kathryn Janeway
-HP: 88
-Strength: 82
-Agility: 85
-Ability: 87
-
-Name: James T. Kirk
-HP: 89
-Strength: 84
-Agility: 88
-Ability: 86
-
-Name: Data
+Spock
 HP: 87
-Strength: 88
-Agility: 82
-Ability: 89
-
-Name: Seven of Nine
-HP: 86
-Strength: 85
-Agility: 90
+Strength: 73
+Agility: 79
 Ability: 88
 
-Name: Leonard McCoy
-HP: 85
-Strength: 80
-Agility: 83
-Ability: 85
-
-Name: Deanna Troi
-HP: 84
-Strength: 82
-Agility: 87
-Ability: 86
-
-Name: Worf
-HP: 88
-Strength: 87
-Agility: 82
-Ability: 90
-
-Name: Beverly Crusher
-HP: 86
-Strength: 84
-Agility: 88
-Ability: 86
-
-Name: Hikaru Sulu
-HP: 87
-Strength: 85
-Agility: 83
-Ability: 85
-
-Name: Guinan
-HP: 85
-Strength: 82
-Agility: 87
-Ability: 88
-
-Name: Montgomery Scott
-HP: 89
-Strength: 86
+Jean-Luc Picard
+HP: 82
+Strength: 78
 Agility: 84
+Ability: 81
+
+Data
+HP: 98
+Strength: 97
+Agility: 83
+Ability: 96
+
+Worf
+HP: 96
+Strength: 86
+Agility: 82
+Ability: 94
+
+Deanna Troi
+HP: 99
+Strength: 85
+Agility: 98
+Ability: 100
+
+Montgomery Scott
+HP: 91
+Strength: 93
+Agility: 79
+Ability: 86
+
+Leonard McCoy
+HP: 85
+Strength: 62
+Agility: 88
+Ability: 77
+
+Nyota Uhura
+HP: 77
+Strength: 53
+Agility: 71
+Ability: 68
+
+Pavel Chekov
+HP: 96
+Strength: 92
+Agility: 77
+Ability: 95
+
+Hikaru Sulu
+HP: 87
+Strength: 87
+Agility: 92
+Ability: 83
+
+Beverly Crusher
+HP: 81
+Strength: 76
+Agility: 83
+Ability: 82
+
+Geordi La Forge
+HP: 88
+Strength: 71
+Agility: 78
 Ability: 87
 
-Name: Pavel Chekov
-HP: 84
-Strength: 80
+Benjamin Sisko
+HP: 92
+Strength: 94
+Agility: 86
+Ability: 93
+
+Kira Nerys
+HP: 88
+Strength: 82
+Agility: 91
+Ability: 87
+
+Jadzia Dax
+HP: 93
+Strength: 86
+Agility: 82
+Ability: 90
+
+Quark
+HP: 86
+Strength: 77
+Agility: 79
+Ability: 80
+
+Odo
+HP: 87
+Strength: 82
 Agility: 85
 Ability: 84
 
-Name: Nyota Uhura
+Gul Dukat
+HP: 82
+Strength: 71
+Agility: 89
+Ability: 78
+
+Ezri Dax
 HP: 86
-Strength: 85
+Strength: 83
+Agility: 88
+Ability: 80
+
+Julian Bashir
+HP: 88
+Strength: 76
+Agility: 81
+Ability: 79
+
+Quark
+HP: 91
+Strength: 83
+Agility: 89
+Ability: 84
+
+Weyoun
+HP: 86
+Strength: 81
+Agility: 90
+Ability: 85
+
+Gowron
+HP: 93
+Strength: 87
 Agility: 83
+Ability: 92
+
+Lwaxana Troi
+HP: 97
+Strength: 96
+Agility: 84
+Ability: 91
+
+Nog
+HP: 87
+Strength: 83
+Agility: 86
+Ability: 85
+
+Elim Garak
+HP: 83
+Strength: 77
+Agility: 81
+Ability: 79
+
+Seven of Nine
+HP: 90
+Strength: 84
+Agility: 86
+Ability: 84
+
+The Doctor
+HP: 86
+Strength: 82
+Agility: 87
+Ability: 80
+
+Tuvok
+HP: 88
+Strength: 81
+Agility: 85
 Ability: 86
 
-Name: Q
-HP: 90
-Strength: 88
-Agility: 90
-Ability: 95
-
-Name: Geordi La Forge
-HP: 87
+Name: Kathryn Janeway
+HP: 89
 Strength: 85
 Agility: 88
-Ability: 89
-
-Name: Tasha Yar
-HP: 85
-Strength: 82
-Agility: 87
-Ability: 86
-
-Name: Wesley Crusher
-HP: 82
-Strength: 80
-Agility: 84
-Ability: 83
-
-Name: Guinan
-HP: 85
-Strength: 82
-Agility: 87
-Ability: 88
+Ability: 90

@@ -34,12 +34,28 @@ public class Franquicia {
     
     public void loadCharacters(){
         String filename = "src\\ArchivosTXT\\" + name + ".txt" ;
+        
+//        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+//            String line;
+//            while ((line = br.readLine()) != null) {
+//                if (line.startsWith("Name:")) {
+//                    String name = line.substring(6).trim(); // Obtener el nombre del personaje
+//                    int hp = Integer.parseInt(br.readLine().substring(4).trim()); // Obtener el HP
+//                    int strength = Integer.parseInt(br.readLine().substring(10).trim()); // Obtener la fuerza
+//                    int agility = Integer.parseInt(br.readLine().substring(8).trim()); // Obtener la agilidad
+//                    int ability = Integer.parseInt(br.readLine().substring(10).trim()); // Obtener las habilidades
+//
+//                }
+//            }
+//        } catch (IOException e) {
+//            System.err.println("Error al leer el archivo: " + e.getMessage());
+//        }
       
         try{
            File myObj = new File(filename);
            Scanner myReader = new Scanner(myObj);
            
-           for(int i=0; i < 19; i++){
+           for(int i=0; i < 30; i++){
                 String line = myReader.nextLine();
                 String nameC = line;
                 line = myReader.nextLine();
@@ -65,7 +81,7 @@ public class Franquicia {
                 }
            }
         } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
+            System.out.println("Ha ocurrido un error");
             e.printStackTrace();
         }
     }
@@ -98,18 +114,18 @@ public class Franquicia {
             if(random <= 40){
                 p1.InsertInFinal(c);
                 if(name.equals("Star Wars")){
-                    GUI.updateP1QueueS1();
-                    GUI.updateRefQueueS1();
+                    GUI.actualizarP1_SW();
+                    GUI.actualizarRef_SW();
                 }else{
-                    GUI.updateP1QueueS2();
-                    GUI.updateRefQueueS2();
+                    GUI.actualizarP1_ST();
+                    GUI.actualizarRef_ST();
                 }
             }else{
                 reinforcement.InsertInFinal(c);
                 if(name.equals("Star Wars")){
-                    GUI.updateRefQueueS1();
+                    GUI.actualizarRef_SW();
                 }else{
-                    GUI.updateRefQueueS2();
+                    GUI.actualizarRef_ST();
                 }
             }
         }
@@ -125,11 +141,11 @@ public class Franquicia {
                 p1.InsertInFinal(c);
                 
                 if(name.equals("Star Wars")){
-                    GUI.updateP1QueueS1();
-                    GUI.updateP2QueueS1();
+                    GUI.actualizarP1_SW();
+                    GUI.actualizarP2_SW();
                 }else{
-                    GUI.updateP1QueueS2();
-                    GUI.updateP2QueueS2();
+                    GUI.actualizarP1_ST();
+                    GUI.actualizarP2_ST();
                 }
             }
             node = node.getNext();
@@ -144,11 +160,11 @@ public class Franquicia {
                 p2.InsertInFinal(c);
                 
                 if(name.equals("Star Wars")){
-                    GUI.updateP2QueueS1();
-                    GUI.updateP3QueueS1();
+                    GUI.actualizarP2_SW();
+                    GUI.actualizarP3_SW();
                 }else{
-                    GUI.updateP2QueueS2();
-                    GUI.updateP3QueueS2();
+                    GUI.actualizarP2_ST();
+                    GUI.actualizarP3_ST();
                 }
             }
             node = node.getNext();

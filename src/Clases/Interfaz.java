@@ -48,7 +48,8 @@ public class Interfaz extends javax.swing.JFrame {
 
         Node<Personaje> node = p1.getFirst();
         while (node != null) {
-            text += node.getElement().name + " (ID: " + node.getElement().ID + ")\n";
+//            text += " " + node.getElement().name + " (ID: " + node.getElement().ID + ")\n";
+            text += " " + node.getElement().ID + ". - " + node.getElement().name + "\n";
             node = node.getNext();
         }
 
@@ -62,7 +63,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         Node<Personaje> node = p2.getFirst();
         while (node != null) {
-            text += node.getElement().name + " (ID: " + node.getElement().ID + ")\n";
+            text += " " + node.getElement().ID + ". - " + node.getElement().name + "\n";
             node = node.getNext();
         }
 
@@ -76,7 +77,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         Node<Personaje> node = p3.getFirst();
         while (node != null) {
-            text += node.getElement().name + " (ID: " + node.getElement().ID + ")\n";
+            text += " " + node.getElement().ID + ". - " + node.getElement().name + "\n";
             node = node.getNext();
         }
 
@@ -90,7 +91,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         Node<Personaje> node = p1.getFirst();
         while (node != null) {
-            text += node.getElement().name + " (ID: " + node.getElement().ID + ")\n";
+            text += " " + node.getElement().ID + ". - " + node.getElement().name + "\n";
             node = node.getNext();
         }
 
@@ -104,7 +105,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         Node<Personaje> node = p2.getFirst();
         while (node != null) {
-            text += node.getElement().name + " (ID: " + node.getElement().ID + ")\n";
+            text += " " + node.getElement().ID + ". - " + node.getElement().name + "\n";
             node = node.getNext();
         }
 
@@ -118,7 +119,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         Node<Personaje> node = p3.getFirst();
         while (node != null) {
-            text += node.getElement().name + " (ID: " + node.getElement().ID + ")\n";
+            text += " " + node.getElement().ID + ". - " + node.getElement().name + "\n";
             node = node.getNext();
         }
 
@@ -132,7 +133,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         Node<Personaje> node = ref.getFirst();
         while (node != null) {
-            text += node.getElement().name + " (ID: " + node.getElement().ID + ")\n";
+            text += " " + node.getElement().ID + ". - " + node.getElement().name + "\n";
             node = node.getNext();
         }
 
@@ -146,7 +147,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         Node<Personaje> node = ref.getFirst();
         while (node != null) {
-            text += node.getElement().name + " (ID: " + node.getElement().ID + ")\n";
+            text += " " + node.getElement().ID + ". - " + node.getElement().name + "\n";
             node = node.getNext();
         }
 
@@ -155,14 +156,14 @@ public class Interfaz extends javax.swing.JFrame {
     
     void actualizarArena_SW() {
         Personaje c = arena.fighter1;
-        characterStarWars.setText(c.name + ":\n  --HP: " + c.hp + "\n  --Strength: " + c.strength + "\n  --Agiity: "
-                + c.agility + "\n  --Abilities: " + c.ability);
+        characterStarWars.setText(" " + c.name + ":\n  Salud: " + c.hp + "\n  Fuerza: " + c.strength + "\n  Agilidad: "
+                + c.agility + "\n  Habilidad: " + c.ability);
     }
 
     void actualizarArena_ST() {
         Personaje c = arena.fighter2;
-        characterStarTrek.setText(c.name + ":\n  --HP: " + c.hp + "\n  --Strength: " + c.strength + "\n  --Agiity: "
-                + c.agility + "\n  --Abilities: " + c.ability);
+        characterStarTrek.setText(" " + c.name + ":\n  Salud: " + c.hp + "\n  Fuerza: " + c.strength + "\n  Agilidad: "
+                + c.agility + "\n  Habilidad: " + c.ability);
     }
 
     void actualizarGanadores_SW() {
@@ -453,9 +454,9 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGap(42, 42, 42))
         );
 
-        logoStarWars.setText("LOGO STAR WARS");
+        logoStarWars.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/StarWars.png"))); // NOI18N
 
-        logoStarTrek.setText("LOGO STAR TREK");
+        logoStarTrek.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/StarTrek.png"))); // NOI18N
 
         startButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/BotonPlay.png"))); // NOI18N
         startButton.addActionListener(new java.awt.event.ActionListener() {
@@ -515,15 +516,15 @@ public class Interfaz extends javax.swing.JFrame {
                         .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(matchStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
                             .addComponent(matchResult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(18, 35, Short.MAX_VALUE)
+                .addGap(18, 68, Short.MAX_VALUE)
                 .addComponent(panelStarTrek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55))
+                .addGap(44, 44, 44))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainWindowLayout.createSequentialGroup()
-                .addGap(180, 180, 180)
+                .addGap(141, 141, 141)
                 .addComponent(logoStarWars)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(startButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addGap(54, 54, 54)
                 .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainWindowLayout.createSequentialGroup()
                         .addComponent(decreaseSpeed)
@@ -532,31 +533,31 @@ public class Interfaz extends javax.swing.JFrame {
                     .addComponent(speedLabel, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(increaseSpeed)
-                .addGap(230, 230, 230)
+                .addGap(76, 76, 76)
                 .addComponent(logoStarTrek)
-                .addGap(167, 167, 167))
+                .addGap(91, 91, 91))
         );
         mainWindowLayout.setVerticalGroup(
             mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainWindowLayout.createSequentialGroup()
                 .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mainWindowLayout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(logoStarWars)
-                            .addComponent(logoStarTrek)))
+                        .addGap(56, 56, 56)
+                        .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(logoStarTrek)
+                            .addComponent(logoStarWars)))
                     .addGroup(mainWindowLayout.createSequentialGroup()
                         .addGap(28, 28, 28)
-                        .addComponent(speedLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(speedSimulation)
-                            .addComponent(increaseSpeed)
-                            .addComponent(decreaseSpeed)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainWindowLayout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(startButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(56, 56, 56)
+                        .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(startButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(mainWindowLayout.createSequentialGroup()
+                                .addComponent(speedLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(speedSimulation)
+                                    .addComponent(increaseSpeed)
+                                    .addComponent(decreaseSpeed))))))
+                .addGap(41, 41, 41)
                 .addGroup(mainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(panelStarWars, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(panelStarTrek, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -571,7 +572,7 @@ public class Interfaz extends javax.swing.JFrame {
                         .addComponent(jLabel17)
                         .addGap(53, 53, 53)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

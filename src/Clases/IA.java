@@ -50,7 +50,7 @@ public class IA extends Thread{
     }
     
     public void processTie(Personaje fighter1, Personaje fighter2){
-        // Put both caracters in their priority 1 queue
+        //Ambos personajes son enviados a la cola de prioridad alta de últimos
         arena.franquicia1.addToP1(fighter1);
         arena.franquicia2.addToP1(fighter2);
         arena.GUI.actualizarP1_SW();
@@ -59,7 +59,7 @@ public class IA extends Thread{
     }
     
     public void processNull(Personaje fighter1, Personaje fighter2){
-        // Put both caracters in their reenforcement queue
+        //Ambos personajes se mueven a la cola de resfuerzo
         arena.franquicia1.addToReinforcement(fighter1);
         arena.franquicia2.addToReinforcement(fighter2);
         arena.GUI.actualizarRef_SW();

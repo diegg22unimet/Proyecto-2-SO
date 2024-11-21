@@ -183,3 +183,15 @@ HP: 89
 Strength: 68
 Agility: 88
 Ability: 90
+
+T'Pol
+HP: 84
+Strength: 58
+Agility: 82
+Ability: 85
+
+Chakotay
+HP: 88
+Strength: 72
+Agility: 86
+Ability: 88

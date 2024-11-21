@@ -48,7 +48,6 @@ public class Interfaz extends javax.swing.JFrame {
 
         Node<Personaje> node = p1.getFirst();
         while (node != null) {
-//            text += " " + node.getElement().name + " (ID: " + node.getElement().ID + ")\n";
             text += " " + node.getElement().ID + ". - " + node.getElement().name + "\n";
             node = node.getNext();
         }
@@ -109,7 +108,7 @@ public class Interfaz extends javax.swing.JFrame {
             node = node.getNext();
         }
 
-        P3Area_ST.setText(text);
+        P2Area_ST.setText(text);
     }
 
     void actualizarP3_ST() {
@@ -183,7 +182,7 @@ public class Interfaz extends javax.swing.JFrame {
     }
 
     void actualizarListaWinners_SW(String winner) {
-        String before = totalWinners_SW.getText();
+        String before = winnerList_SW.getText();
         winnerList_SW.setText(before + winner + "\n");
     }
 

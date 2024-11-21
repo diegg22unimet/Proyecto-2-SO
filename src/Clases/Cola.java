@@ -128,4 +128,33 @@ public class Cola <T> {
         }
     }
     
+    public void removeN(T item) {
+        Node current = getFirst();
+        Node previous = null;
+
+        while (current != null) {
+            if (current.getElement().equals(item)) {
+                if (previous == null) {
+                    // If the item to be removed is at the front of the queue
+                    setFirst(current.getNext());
+                    if (getFirst() == null) {
+                        // If the queue becomes empty after removal
+                        setLast(null);
+                    }
+                } else {
+                    // If the item to be removed is not at the front of the queue
+                    Node aux = previous.getNext();
+                    aux.setNext(current.getNext());
+                    if (current.getNext() == null) {
+                        // If the item to be removed is at the rear of the queue
+                        setLast(previous);
+                    }
+                }
+                size--;
+                return;
+            }
+            previous = current;
+            current = current.getNext();
+        }
+    }
 }

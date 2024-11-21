@@ -8,9 +8,9 @@ package Clases;
  *
  * @author User
  */
-public class Cola <T> {
-    private Node First;
-    private Node Last;
+public class Cola<T> {
+    private Node<T> First;
+    private Node<T> Last;
     private int size;
 
     public Cola() {
@@ -82,31 +82,14 @@ public class Cola <T> {
             First = nuevo;
             First.setNext(Last);
             Last = nuevo;
-            size++;
-        }else{
+        } else{
             Last.setNext(nuevo);
             Last= nuevo;
-            size++;    
         }
-    }
-    
- 
-    
-    public void imprimir(){
-        if (!isEmpty()){
-            Node aux = this.getFirst();
-            for (int i = 0; i < size; i++) {
-                System.out.println(aux.getElement()+" ");
-                aux = aux.getNext();
-            }
-            
-        }else{
-            System.out.println("Lista vacía");
-        }
+        size++;
     }
     
     //dispatch lo que hace es quitar de la cola y devolver el objeto que quito 
-    
     public T dispatch() {
         if (!isEmpty()) {
             Node pointer = getFirst();
@@ -118,16 +101,6 @@ public class Cola <T> {
         return null;
     }
     
-    //remove lo que hace es quitar de la cola
-    public void remove() {
-        if (!isEmpty()) {
-            Node pointer = getFirst();
-            setFirst(pointer.getNext());
-            pointer.setNext(null);
-            size--;
-        }
-    }
-    
     public void removeN(T item) {
         Node current = getFirst();
         Node previous = null;
@@ -135,18 +108,14 @@ public class Cola <T> {
         while (current != null) {
             if (current.getElement().equals(item)) {
                 if (previous == null) {
-                    // If the item to be removed is at the front of the queue
                     setFirst(current.getNext());
                     if (getFirst() == null) {
-                        // If the queue becomes empty after removal
                         setLast(null);
                     }
                 } else {
-                    // If the item to be removed is not at the front of the queue
                     Node aux = previous.getNext();
                     aux.setNext(current.getNext());
                     if (current.getNext() == null) {
-                        // If the item to be removed is at the rear of the queue
                         setLast(previous);
                     }
                 }

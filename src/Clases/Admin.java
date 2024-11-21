@@ -28,7 +28,7 @@ public class Admin extends Thread{
                           
             turn++;
             
-            // Set fighters in arena
+            // Setear peleadores en la arena
             arena.fighter1 = arena.chooseFighter(arena.franquicia1);
             arena.fighter2 = arena.chooseFighter(arena.franquicia2);
             if(arena.fighter1 == null || arena.fighter2 == null){
@@ -42,7 +42,7 @@ public class Admin extends Thread{
             arena.GUI.actualizarArena_SW();
             arena.GUI.actualizarArena_ST();
             
-            // Update queues
+            // Actualizar las colas
             arena.franquicia1.actualizarContador();
             arena.franquicia2.actualizarContador();
             arena.franquicia1.checkReinforcement();

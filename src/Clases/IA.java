@@ -32,16 +32,24 @@ public class IA extends Thread{
 
             //Turno del atacante
             System.out.println(atacante.getName()+ " ataca.");
-            boolean usarHabilidadEspecial = atacante.tieneVidaBaja();
-            int danio = atacante.atacar(usarHabilidadEspecial);
-            if (!defensor.evadir(atacante.getAgility())) {
-                defensor.recibirDanio(danio);
-                System.out.println(defensor.getName()+ " recibe " + danio + " de daño. Vida restante: " + defensor.getHp());
+            
+            //Criterio para curarse: si la vida del atacante es menor al 30% de su vida máxima
+            if (atacante.getHp() < (atacante.getHp_max() * 0.3)) {
+                int cantidadCuracion = 20; //+20 puntos de vida
+                atacante.curarse(cantidadCuracion);
+                System.out.println(atacante.getName() + " se cura " + cantidadCuracion + " HP.");
             } else {
-                System.out.println(defensor.getName()+ " evade el ataque.");
+                boolean usarHabilidadEspecial = atacante.tieneVidaBaja();
+                int danio = atacante.atacar(usarHabilidadEspecial);
+                if (!defensor.evadir(atacante.getAgility())) {
+                    defensor.recibirDanio(danio);
+                    System.out.println(defensor.getName() + " recibe " + danio + " de daño. Vida restante: " + defensor.getHp());
+                } else {
+                    System.out.println(defensor.getName() + " evade el ataque.");
+                }
             }
             
-            //Verificar si el defensor ha sido derrotado
+            //Se verifica si el defensor ha sido derrotado
             if (defensor.getHp()<= 0) {
                 System.out.println(defensor.getName()+ " ha sido derrotado.");
                 arena.winners.InsertInFinal(atacante);

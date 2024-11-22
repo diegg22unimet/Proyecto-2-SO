@@ -36,7 +36,7 @@ public class Personaje {
         double multiplicadorCritico = (rand.nextInt(100) < ability * 10) ? 1.5 : 1.0;
         int danio = (int) (strength * multiplicadorCritico);
 
-        // Usar habilidad especial si se activa
+        //Usar habilidad especial si se activa
         if (usarHabilidadEspecial) {
             danio *= 2; // Doble daño
             System.out.println(name + " usa su habilidad especial!");
@@ -61,7 +61,8 @@ public class Personaje {
     }
     
     public boolean tieneVidaBaja() {
-        return hp < hp_max * 0.3; // Habilidad especial activa si la vida está por debajo del 30%
+        //Se activa si la vida está por debajo del 30%
+        return hp < hp_max * 0.3;
     }
     
     public void comprobarCalidad(int probability){
@@ -120,6 +121,10 @@ public class Personaje {
     public int getAgility() {
         return agility;
     }
-    
+
+    public int getHp_max() {
+        return hp_max;
+    }
+ 
 }
 

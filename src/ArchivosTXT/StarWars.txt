@@ -1,185 +1,185 @@
 Luke Skywalker
 HP: 93
-Strength: 65
+Strength: 52
 Agility: 77
 Ability: 92
 
 Leia Organa
 HP: 87
-Strength: 58
+Strength: 46
 Agility: 79
 Ability: 88
 
 Han Solo
 HP: 82
-Strength: 62
+Strength: 49
 Agility: 84
 Ability: 81
 
 Darth Vader
 HP: 98
-Strength: 78
+Strength: 62
 Agility: 83
 Ability: 96
 
 Obi-Wan Kenobi
 HP: 96
-Strength: 69
+Strength: 55
 Agility: 82
 Ability: 94
 
 Yoda
 HP: 99
-Strength: 68
+Strength: 54
 Agility: 98
 Ability: 100
 
 Chewbacca
 HP: 91
-Strength: 74
+Strength: 59
 Agility: 79
 Ability: 86
 
 R2-D2
 HP: 85
-Strength: 50
+Strength: 40
 Agility: 88
 Ability: 77
 
 C-3PO
 HP: 77
-Strength: 42
+Strength: 34
 Agility: 71
 Ability: 68
 
 Emperor Palpatine
 HP: 96
-Strength: 74
+Strength: 59
 Agility: 77
 Ability: 95
 
 Boba Fett
 HP: 87
-Strength: 70
+Strength: 56
 Agility: 92
 Ability: 83
 
 Lando Calrissian
 HP: 81
-Strength: 61
+Strength: 49
 Agility: 83
 Ability: 82
 
 Padmé Amidala
 HP: 88
-Strength: 57
+Strength: 46
 Agility: 78
 Ability: 87
 
 Mace Windu
 HP: 92
-Strength: 75
+Strength: 60
 Agility: 86
 Ability: 93
 
 Rey
 HP: 88
-Strength: 66
+Strength: 53
 Agility: 91
 Ability: 87
 
 Kylo Ren
 HP: 93
-Strength: 69
+Strength: 55
 Agility: 82
 Ability: 90
 
 Finn
 HP: 86
-Strength: 62
+Strength: 49
 Agility: 79
 Ability: 80
 
 Poe Dameron
 HP: 87
-Strength: 66
+Strength: 53
 Agility: 85
 Ability: 84
 
 BB-8
 HP: 82
-Strength: 57
+Strength: 46
 Agility: 89
 Ability: 78
 
 Jyn Erso
 HP: 86
-Strength: 66
+Strength: 53
 Agility: 88
 Ability: 80
 
 Cassian Andor
 HP: 88
-Strength: 61
+Strength: 49
 Agility: 81
 Ability: 79
 
 Darth Maul
 HP: 91
-Strength: 66
+Strength: 53
 Agility: 89
 Ability: 84
 
 Ahsoka Tano
 HP: 86
-Strength: 65
+Strength: 52
 Agility: 90
 Ability: 85
 
 Count Dooku
 HP: 93
-Strength: 70
+Strength: 56
 Agility: 83
 Ability: 92
 
 General Grievous
 HP: 97
-Strength: 77
+Strength: 62
 Agility: 84
 Ability: 91
 
 Captain Rex
 HP: 87
-Strength: 66
+Strength: 53
 Agility: 86
 Ability: 85
 
 Grand Moff Tarkin
 HP: 83
-Strength: 61
+Strength: 49
 Agility: 81
 Ability: 79
 
 Asajj Ventress
 HP: 90
-Strength: 67
+Strength: 54
 Agility: 86
 Ability: 84
 
 Ezra Bridger
 HP: 86
-Strength: 66
+Strength: 53
 Agility: 87
 Ability: 80
 
 Hera Syndulla
 HP: 88
-Strength: 65
+Strength: 52
 Agility: 85
 Ability: 86
 
 Sabine Wren
 HP: 84
-Strength: 61
+Strength: 49
 Agility: 82
 Ability: 79
